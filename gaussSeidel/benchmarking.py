@@ -11,8 +11,14 @@ import numpy as np
 import criterios
 import gauss_seidel
 
+def getDumbMatrix (size = 20):
+    matrix = np.ones(shape=(size,size))
+    for i in range (size):
+        matrix[i][i] = np.random.randint(100,500)
+    return matrix
+
 def getSafeValues (size = 20, limit = 1000):
-    print (size)
+    #print (size)
     count = 0
     while count < limit:
         count = count + 1
@@ -57,10 +63,7 @@ def variableBenchmark (size = 20, limit = 1000):
 
 
 """teste com valores fixos"""
-def fixedBenchmark():
-    
-    testeA = [[3,1,1],[1,4,2],[0,2,5]]
-    testeB = np.array([7,4,5])
+def fixedBenchmark(testeA, testeB):
     
     startNumPy = time()
     respostaNumPy = np.linalg.solve(testeA,testeB)
@@ -69,7 +72,7 @@ def fixedBenchmark():
     execNumPy = endNumPy - startNumPy
     del endNumPy, startNumPy
 
-    chute = np.zeros(3)
+    chute = np.zeros(len(testeB))
     startGauss = time()
     respostaGauss = gauss_seidel.gauss_seidel(testeA,testeB, 0.1, 10, chute)
     endGauss = time()
@@ -80,9 +83,14 @@ def fixedBenchmark():
     return respostaNumPy, execNumPy, respostaGauss, execGauss
 
 
-teste1 = variableBenchmark(20, 40000)
-print("diferenca de tempo no teste variavel foi de:", teste1[3]-teste1[1])
-#teste2 = fixedBenchmark()
-#print("diferenca de tempo no texte 3x3 fixo foi de:", teste2[3]-teste2[1])
+#teste1 = variableBenchmark(20, 40000)
+#print("diferenca de tempo no teste variavel foi de:", teste1[3]-teste1[1])
+    
+matrizA = getDumbMatrix(20)
+matrizB = np.random.rand(20,1)
 
-#testealpha = np.random.rand(4,4)
+teste = list()
+[teste.append(fixedBenchmark(matrizA,matrizB)) for x in range (3)]
+
+mediaNumPy = sum(teste[x][1] for x in range (3))/3
+mediaGauss = sum(teste[x][3] for x in range (3))/3

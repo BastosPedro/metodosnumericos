@@ -42,9 +42,9 @@ def crit_sass(a):
     return max(sassalpha)
 
 
-teste = [[10,2,1],[1,5,1],[2,3,10]]
+#teste = [[10,2,1],[1,5,1],[2,3,10]]
 
-print(crit_linha(teste))
-print(crit_coluna(teste))
-print(crit_sass(teste))
+#print(crit_linha(teste))
+#print(crit_coluna(teste))
+#print(crit_sass(teste))
         
