@@ -14,7 +14,7 @@ def getMatrix (size = 20):
     """gera uma matriz que sempre vai convergir conforme o criterio das linhas"""
     matrix = np.random.rand(size,size)
     for x in range(size):
-        matrix[x][x] = sum(matrix[x])
+        matrix[x][x] = sum(map(abs,matrix[x]))
     return matrix
 
 
