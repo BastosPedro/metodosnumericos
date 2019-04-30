@@ -1,4 +1,4 @@
-# metodosnumericos
+# Métodos Numéricos (Seleção do LCCV)
 Benchmark de métodos numéricos feitos "à mão" no Python contra a utilização de bibliotecas como NumPy e SciPy.
 
 Foi utilizada a versão 3.6.7 do Python, e os seguintes módulos:
