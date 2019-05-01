@@ -31,7 +31,7 @@ def gauss(A, B):
             bauxrow = b[k]
             b[k] = b[auxcount]
             b[auxcount] = bauxrow
-              
+             
     for j in range (size):
         for i in range (j+1,size):
             aux = a[i][j]/a[j][j]
