@@ -5,14 +5,14 @@ Created on Sat Apr 27 15:35:02 2019
 
 @author: pedro
 """
-import numpy as np
 
 def gauss_seidel (a, b, tol, nitemax, x0):
+    """execução do método de gauss-seidel, recebe a matriz a dos coeficientes, a matriz b dos radiciais livres, a tolerancia, o numero maximo e iteracoes, e o chute inicial, retornando a resposta estimada"""
     nite = 0
     dist = 0
     size = len(a)
     x = x0
-    s = np.zeros(2)
+    s = [0] * 2
     while dist < tol and nite < nitemax:
         nite = nite+1
         for i in range (size):
