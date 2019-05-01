@@ -8,28 +8,8 @@ Created on Tue Apr 30 20:10:01 2019
 
 from gauss import gauss
 from jacobiana import jacobian
-from math import sqrt
+from support import evaluate, norm, sumMatrices
 
-
-def evaluate(funcMatrix, values):
-    """pega um vetor de funcoes, os valores, e executa cada funcao nos valores"""
-    size = len(funcMatrix)
-    answer = [0] * size
-    for x in range(size):
-        answer[x]  = funcMatrix[x](values)
-    return answer
-    
-def norm(x):
-    """norma do vetor"""
-    return sqrt(sum(pow(i,2) for i in x))
-
-def sumMatrices(a,b):
-    """soma matrizes 1xN ou Nx1"""
-    size = len(a)
-    result = [0]*size
-    for i in range (size):
-        result[i] = a[i] + b[i]
-    return result
 
 def newtonRaphson(funcMatrix, x0, epsilon=0.0001, niteMax=10):
     """o metodo de newton raphson"""
@@ -41,15 +21,10 @@ def newtonRaphson(funcMatrix, x0, epsilon=0.0001, niteMax=10):
             break
         else:
             fxk = [i*-1 for  i in evaluate(funcMatrix,xk[k])]
-            print(fxk)
             jxk = jacobian(funcMatrix, xk[k])
-            print(jxk)
             dx = gauss(jxk, fxk)
-            print(dx)
             xk[k+1] = sumMatrices(xk[k], dx)
-            print(xk)
     
-    print(xk)
     return xk[k]
     
 def f1(v):
