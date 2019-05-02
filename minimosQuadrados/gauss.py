@@ -49,27 +49,3 @@ def gauss(A, B):
     return answer
 
 
-
-#testeA = (((2,3), (1,-1)))
-#testeB = (7,1)
-
-#resposta = gauss(testeA, testeB)
-
-
-"""
-testeC = ((5, 2.5, 1.875), (2.5, 1.875, 1.5625), (1.875, 1.5625, 1.3828125))
-testeD = (8.831, 5.5144, 4.4645375000000005)
-
-from numpy.linalg import solve
-
-
-
-resposta2 = gauss(testeC,testeD)
-
-resposta3 = solve(testeC,testeD)
-
-print(resposta2 == resposta3)
-
-se o usuario quiser, sera possivel checar que, de fato, ambos metodos do numpy e do python feito a mao estao muito proximos
-
-"""

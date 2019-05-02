@@ -23,7 +23,6 @@ def minimosQuadrados (points, fpoints, power = 4):
     for x in range (1, 2*power+1): #montando os valores que vao entrar na matriz A
         xks[x] = sum([pow(i,x) for i in points])
         
-    print(xks)
         
     for x in range(n):
         for y in range(n): #colocando os valores achados na matriz A
@@ -32,16 +31,11 @@ def minimosQuadrados (points, fpoints, power = 4):
     for x in range (n): #montando o vetor B
         vectorB[x] = sum([pow(points[j],x)*fpoints[j] for j in range(m)]) 
         
-    #print(matrixA)
-    #print(vectorB)
-
     
     auxA = tuple([tuple(x) for x in matrixA])
     auxB = tuple(vectorB)
     
     coefs = gauss(auxA, auxB)
-    
-    print(coefs)
     
     def func(x):
         func = 0
@@ -52,12 +46,6 @@ def minimosQuadrados (points, fpoints, power = 4):
     return func, coefs
 
 
-    
-    
-testeX = [0, 0.25, 0.5, 0.75, 1]
-testeFx = [1, 1.284, 1.6487, 2.117, 2.7813]
-
-resposta = minimosQuadrados (testeX, testeFx, 4)    
     
         
     

@@ -8,34 +8,9 @@ Created on Mon Apr 29 10:09:24 2019
 
 from lagrange import lagrange as pyLagrange
 from quadrilateral_quadratico import quadrilateralQuadratico as quadLat
-
-
-import numpy as np
 from scipy.interpolate import lagrange as spLagrange
 from time import time
-
-"""
-pontos1 = np.ravel(np.random.rand(1,3)) 
-fpontos1 = np.ravel(np.random.rand(1,3))
-func0 = lagrange.lagrange(pontos1,fpontos1)
-
-pontos2 = np.ravel(np.random.rand(1,3))
-fpontos2 = np.ravel(np.random.rand(1,3))
-func1 = lagrange.lagrange(pontos2,fpontos2)
-
-pontos3 = np.ravel(np.random.rand(1,3))
-fpontos3 = np.ravel(np.random.rand(1,3))
-gunc0 = lagrange.lagrange(pontos3,fpontos3)
-
-pontos4 = np.ravel(np.random.rand(1,3))
-fpontos4 = np.ravel(np.random.rand(1,3))
-gunc1 = lagrange.lagrange(pontos4,fpontos4)
-
-f = [func0, func1]
-f2 = [gunc0, gunc1]
-
-quadrado = quadrilateral_quadratico.quadrilateralQuadratico(f,g)
-"""
+import numpy as np
 
 
 
@@ -87,7 +62,7 @@ def benchmark (valores):
 
 
 
-teste = getValues(3,2)
+teste = getValues(3,3)
 
 resultados = list()
 [resultados.append(benchmark(teste)) for x in range(3)]

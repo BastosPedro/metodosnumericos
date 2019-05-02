@@ -26,7 +26,6 @@ def benchmark(testeA, testeB):
     endNumPy = time()
 
     execNumPy = endNumPy - startNumPy
-    del endNumPy, startNumPy
 
     chute = np.zeros(len(testeB))
     startGauss = time()
@@ -34,7 +33,6 @@ def benchmark(testeA, testeB):
     endGauss = time()
     
     execGauss = endGauss - startGauss
-    del endGauss, startGauss, chute
     
     return respostaNumPy, execNumPy, respostaGauss, execGauss
 
