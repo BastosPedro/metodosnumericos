@@ -3,12 +3,13 @@ Benchmark de métodos numéricos feitos "à mão" no Python contra a utilizaçã
 
 Foi utilizada a versão 3.6.7 do Python, e os seguintes módulos:
 
-- NumPy, versão 1.16.2;
+- NumPy (versão 1.16.2);
 
-- SciPy, versão 1.2.1;
+- SciPy (versão 1.2.1);
 
-- time (built-in do próprio Python);
+- time (_built-in_ do próprio Python);
 
+- math (_built-in_ do próprio Python).
 
 Para cada método existe testado existe uma pasta, na qual existe um script chamado "benchmark.py" ou "benchmarking.py" (exceto na pasta do newtonRaphson, já que o exercício não exigiu sua avaliação), eles automaticamente fazem o processo de comparação e retornam resultados para o avaliador.
 
